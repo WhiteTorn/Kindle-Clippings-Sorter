@@ -4,12 +4,15 @@ lines = list()
 
 
 def process_file(file_name):
-    with open(file_name, 'r', errors='ignore') as file:
-        global lines
-        lines = file.readlines()
+    try:
+        with open(file_name, 'r', encoding = 'utf-8') as file:
+            global lines
+            lines = file.readlines()
+    except FileNotFoundError:
+        print("File Not Found")
 
 
-process_file('clip.txt')
+process_file('test.txt')
 
 title_notes_dict = {}
 title = lines[0]
@@ -52,7 +55,7 @@ def create_or_append_notes_file(title, notes):
     punc = '\n'
     title = re.sub(r'[^\x20-\x7E]', '', title)
     file_name = f"{title}.txt"  # Append ".txt" extension to the title for the file name
-    with open(file_name, 'a') as file:
+    with open(file_name, 'a', encoding = 'utf-8') as file:
         if type(notes) == list:
             for note in notes:
                 file.write(f"- {note}\n\n")
