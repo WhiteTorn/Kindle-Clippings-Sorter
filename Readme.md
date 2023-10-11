@@ -6,7 +6,4 @@ this script allows you to sort clippings from kindle.
 Run script and everything is done.
 
 
-## ⚠⚠⚠ Some bugs and issues
-- I think script can't convert big files.
-
 good luck.
