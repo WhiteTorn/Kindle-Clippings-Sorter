@@ -12,7 +12,7 @@ def process_file(file_name):
         print("File Not Found")
 
 
-process_file('test.txt')
+process_file('My Clippings.txt')
 
 title_notes_dict = {}
 title = lines[0]
